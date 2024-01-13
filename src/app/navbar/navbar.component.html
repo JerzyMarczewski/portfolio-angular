@@ -1,1 +1,12 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <!-- ! REMOVE LATER -->
+  <p>SELECTED LANGUAGE: {{ language$ | async }}</p>
+
+  @if ((language$ | async) === "pl") {
+  <div><a href="">o mnie</a><a href="">projekty</a><a href="">kontakt</a></div>
+  } @else {
+  <div><a href="">about</a><a href="">projects</a><a href="">contact</a></div>
+  }
+
+  <app-language-switcher></app-language-switcher>
+</nav>
