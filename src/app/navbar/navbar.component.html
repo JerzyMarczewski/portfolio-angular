@@ -1,6 +1,6 @@
 <nav
   class="navbar"
-  [@separeteNavbar]="pageScrolled ? 'separate' : 'unseparate'"
+  [@separateNavbar]="pageScrolled ? 'separate' : 'unseparate'"
 >
   <div
     class="nav-menu"
@@ -19,8 +19,17 @@
   </div>
 
   <div class="hamburger" (click)="toggleMobileNavbar()">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
+    <span
+      class="bar"
+      [@bar1Animation]="hamburgerActive ? 'active' : 'inactive'"
+    ></span>
+    <span
+      class="bar"
+      [@bar2Animation]="hamburgerActive ? 'active' : 'inactive'"
+    ></span>
+    <span
+      class="bar"
+      [@bar3Animation]="hamburgerActive ? 'active' : 'inactive'"
+    ></span>
   </div>
 </nav>

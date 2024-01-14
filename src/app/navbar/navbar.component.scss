@@ -64,14 +64,11 @@ nav.navbar {
     }
 
     @media only screen and (min-width: 1920px) {
-      // padding: 2rem 20%;
       padding: 2rem 20%;
       font-size: 1.5rem;
 
     }
   }
-
-    
 
   .hamburger {
     display: block;
@@ -85,25 +82,11 @@ nav.navbar {
     
     .bar {
       display: block;
-      width: 25px;
-      height: 3px;
-      border-radius: 3px;
-      margin: 5px auto;
-      transition: all 0.3s ease-in-out;
-      -webkit-transition: all 0.3s ease-in-out;
+      width: 2rem;
+      height: 0.25rem;
+      border-radius: 0.2rem;
+      margin: 0.25rem auto;
       background: $primary-dark;
-    }
-    
-    &.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    
-    &.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    
-    &.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
     }
   }
   

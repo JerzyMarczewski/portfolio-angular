@@ -11,6 +11,9 @@ import {
   style,
   animate,
   transition,
+  query,
+  stagger,
+  keyframes,
 } from '@angular/animations';
 
 @Component({
@@ -42,7 +45,7 @@ import {
       transition('open => closed', [animate('0.3s')]),
       transition('closed => open', [animate('0.3s')]),
     ]),
-    trigger('separeteNavbar', [
+    trigger('separateNavbar', [
       state(
         'separate',
         style({
@@ -52,6 +55,110 @@ import {
       ),
       state('unseparate', style({})),
       transition('* => *', [animate('0.3s')]),
+    ]),
+    trigger('bar1Animation', [
+      state('inactive', style({})),
+      state(
+        'active',
+        style({
+          transform: 'translateY(0.5rem) rotate(45deg)',
+        })
+      ),
+      transition(
+        'inactive => active',
+        animate(
+          '0.2s',
+          keyframes([
+            style({ transform: 'translateY(0)', offset: 0 }),
+            style({ transform: 'translateY(0.5rem)', offset: 0.5 }),
+            style({ transform: 'translateY(0.5rem) rotate(45deg)', offset: 1 }),
+          ])
+        )
+      ),
+      transition(
+        'active => inactive',
+        animate(
+          '0.2s',
+          keyframes([
+            style({ transform: 'translateY(0.5rem) rotate(45deg)', offset: 0 }),
+            style({ transform: 'translateY(0.5rem)', offset: 0.5 }),
+            style({ transform: 'translateY(0)', offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('bar2Animation', [
+      state(
+        'inactive',
+        style({
+          opacity: 1,
+        })
+      ),
+      state(
+        'active',
+        style({
+          opacity: 0,
+        })
+      ),
+      transition(
+        'inactive => active',
+        animate(
+          '0.2s',
+          keyframes([
+            style({ opacity: 1, offset: 0 }),
+            style({ opacity: 0, offset: 0.5 }),
+            style({ opacity: 0, offset: 1 }),
+          ])
+        )
+      ),
+      transition(
+        'active => inactive',
+        animate(
+          '0.2s',
+          keyframes([
+            style({ opacity: 0, offset: 0 }),
+            style({ opacity: 0, offset: 0.5 }),
+            style({ opacity: 1, offset: 1 }),
+          ])
+        )
+      ),
+    ]),
+    trigger('bar3Animation', [
+      state('inactive', style({})),
+      state(
+        'active',
+        style({
+          transform: 'translateY(-0.5rem) rotate(-45deg)',
+        })
+      ),
+      transition(
+        'inactive => active',
+        animate(
+          '0.2s',
+          keyframes([
+            style({ transform: 'translateY(0)', offset: 0 }),
+            style({ transform: 'translateY(-0.5rem)', offset: 0.5 }),
+            style({
+              transform: 'translateY(-0.5rem) rotate(-45deg)',
+              offset: 1,
+            }),
+          ])
+        )
+      ),
+      transition(
+        'active => inactive',
+        animate(
+          '0.2s',
+          keyframes([
+            style({
+              transform: 'translateY(-0.5rem) rotate(-45deg)',
+              offset: 0,
+            }),
+            style({ transform: 'translateY(-0.5rem)', offset: 0.5 }),
+            style({ transform: 'translateY(0)', offset: 1 }),
+          ])
+        )
+      ),
     ]),
   ],
 })
