@@ -1,12 +1,26 @@
-<nav class="navbar">
-  <!-- ! REMOVE LATER -->
-  <p>SELECTED LANGUAGE: {{ language$ | async }}</p>
+<nav
+  class="navbar"
+  [@separeteNavbar]="pageScrolled ? 'separate' : 'unseparate'"
+>
+  <div
+    class="nav-menu"
+    [@openClose]="!isMobile || hamburgerActive ? 'open' : 'closed'"
+  >
+    @if ((language$ | async) === "pl") {
+    <a href="#">o mnie</a>
+    <a href="#">projekty</a>
+    <a href="#">kontakt</a>
+    } @else {
+    <a href="#">about</a>
+    <a href="#">projects</a>
+    <a href="#">contact</a>
+    }
+    <app-language-switcher></app-language-switcher>
+  </div>
 
-  @if ((language$ | async) === "pl") {
-  <div><a href="">o mnie</a><a href="">projekty</a><a href="">kontakt</a></div>
-  } @else {
-  <div><a href="">about</a><a href="">projects</a><a href="">contact</a></div>
-  }
-
-  <app-language-switcher></app-language-switcher>
+  <div class="hamburger" (click)="toggleMobileNavbar()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
 </nav>
