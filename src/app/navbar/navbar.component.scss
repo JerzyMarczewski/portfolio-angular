@@ -1,6 +1,119 @@
+@import '../../variables';
+
+$navbar-height: 4rem;
+
 nav.navbar {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $navbar-height;
+  background-color: $primary-yellow;
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+
+    position: fixed;
+    top: $navbar-height;
+    padding-top: 3rem;
+    background-color: $primary-light;
+    color: $primary-dark;
+    width: 100%;
+    height: calc(100svh - $navbar-height);
+
+    font-weight: 600;
+    text-align: center;
+    overflow: hidden;
+
+    a {
+      all: unset;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+
+    @media only screen and (min-width: 720px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      background-color: transparent;
+      gap: 1rem;
+
+      position: static;
+      height: auto;
+      padding: 1rem 3rem;
+
+      font-weight: 500;
+
+      translate: 0%;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      padding: 1.5rem 10%;
+      font-size: 1.25rem;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      padding: 1.75 15%;
+    }
+
+    @media only screen and (min-width: 1920px) {
+      // padding: 2rem 20%;
+      padding: 2rem 20%;
+      font-size: 1.5rem;
+
+    }
+  }
+
+    
+
+  .hamburger {
+    display: block;
+    margin-right: 2rem;
+  
+    cursor: pointer;
+  
+    @media only screen and (min-width: 720px) {
+      display: none;
+    }
+    
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      border-radius: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      background: $primary-dark;
+    }
+    
+    &.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    &.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    
+    &.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+  
+  @media only screen and (min-width: 720px) {
+    height: auto;
+  }
 }
+
+
+
+
+
+
