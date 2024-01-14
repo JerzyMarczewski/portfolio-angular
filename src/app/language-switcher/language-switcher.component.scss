@@ -1,0 +1,48 @@
+@import '../../variables';
+
+$toggler-width: 6rem;
+$toggler-height: calc($toggler-width / 2);
+$toggler-border-width: 0.3rem;
+$knob-size: 2.2rem;
+$knob-margin: calc(calc($toggler-height - $knob-size) / 2);
+
+
+.languageSwitcher {
+  position: relative;
+  width: $toggler-width;
+  height: $toggler-height;
+  border-radius: $toggler-width;
+  // border: $toggler-border-width solid $primary-dark;
+  background-color: #BDC1C8;
+  box-shadow: 0 0 0.25rem #BDC1C8;
+  margin: 0 1.5rem;
+
+  cursor: pointer;
+
+  .knob {
+    position: absolute;
+    top: $knob-margin;
+    left: calc(50% - calc($knob-size/2));
+    z-index: 1;
+    
+    height: $knob-size;
+    width: $knob-size;
+    border-radius: 50%;
+
+    background-size: contain;
+  }
+
+  .label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .label.pl {
+    left: 0.7rem;
+  }
+
+  .label.en {
+    right: 0.7rem;
+  }
+}
