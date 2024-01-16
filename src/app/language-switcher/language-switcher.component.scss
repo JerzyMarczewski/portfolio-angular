@@ -1,11 +1,9 @@
 @import '../../variables';
 
-$toggler-width: 6rem;
+$toggler-width: 3rem;
 $toggler-height: calc($toggler-width / 2);
-$toggler-border-width: 0.3rem;
-$knob-size: 2.2rem;
+$knob-size: calc(0.7 * $toggler-height);
 $knob-margin: calc(calc($toggler-height - $knob-size) / 2);
-
 
 .languageSwitcher {
   position: relative;
@@ -35,14 +33,16 @@ $knob-margin: calc(calc($toggler-height - $knob-size) / 2);
   .label {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
   }
 
   .label.pl {
-    left: 0.7rem;
+    transform: translate(-100%, -50%);
   }
 
   .label.en {
-    right: 0.7rem;
+    transform: translate(0%, -50%);
   }
 }

@@ -52,7 +52,7 @@ import {
       state(
         'shown',
         style({
-          opacity: 1,
+          opacity: 0.8,
         })
       ),
       transition('hidden <=> shown', animate('0.2s')),
