@@ -1,6 +1,7 @@
 @import '../../variables';
 
-$navbar-height: 4rem;
+$mobile-navbar-height: 4rem;
+$desktop-navbar-height: 5rem;
 
 nav.navbar {
   display: flex;
@@ -11,62 +12,65 @@ nav.navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  height: $navbar-height;
+  height: $mobile-navbar-height;
+  z-index: 10;
   background-color: $primary-yellow;
 
   .nav-menu {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    align-items: center;
     gap: 1rem;
 
     position: fixed;
-    top: $navbar-height;
-    padding-top: 3rem;
+    top: $mobile-navbar-height;
+    padding-top: 30%;
     background-color: $primary-light;
     color: $primary-dark;
     width: 100%;
-    height: calc(100svh - $navbar-height);
+    max-width: 100%;
+    height: calc(100svh - $mobile-navbar-height);
 
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 300;
     text-align: center;
     overflow: hidden;
 
-    a {
-      all: unset;
-      cursor: pointer;
-      text-transform: capitalize;
-    }
-
-    @media only screen and (min-width: 720px) {
+    @media only screen and (min-width: $md) {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
+      align-items: center;
       background-color: transparent;
-      gap: 1rem;
+      gap: 0.75rem;
 
       position: static;
-      height: auto;
-      padding: 1rem 3rem;
+      height: $desktop-navbar-height;
+      padding: 0 3rem;
 
-      font-weight: 500;
+      font-size: 1rem;
 
       translate: 0%;
     }
 
-    @media only screen and (min-width: 1024px) {
-      padding: 1.5rem 10%;
-      font-size: 1.25rem;
+    @media only screen and (min-width: $lg) {
+      margin: auto;
     }
 
-    @media only screen and (min-width: 1280px) {
-      padding: 1.75 15%;
+    @media only screen and (min-width: $xl) {
+
     }
 
-    @media only screen and (min-width: 1920px) {
-      padding: 2rem 20%;
-      font-size: 1.5rem;
+    @media only screen and (min-width: $xl2) {
+      max-width: calc(0.9 * $xl2);
 
+    }
+
+    a {
+      all: unset;
+      cursor: pointer;
+      text-transform: uppercase;
     }
   }
 
@@ -76,7 +80,7 @@ nav.navbar {
   
     cursor: pointer;
   
-    @media only screen and (min-width: 720px) {
+    @media only screen and (min-width: $md) {
       display: none;
     }
     
@@ -90,7 +94,7 @@ nav.navbar {
     }
   }
   
-  @media only screen and (min-width: 720px) {
+  @media only screen and (min-width: $md) {
     height: auto;
   }
 }

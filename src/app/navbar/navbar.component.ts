@@ -11,8 +11,6 @@ import {
   style,
   animate,
   transition,
-  query,
-  stagger,
   keyframes,
 } from '@angular/animations';
 
@@ -167,11 +165,12 @@ export class NavbarComponent {
   hamburgerActive: boolean = false;
   pageScrolled: boolean = false;
   isMobile: boolean = true;
+  md_breakpoint = 768;
 
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.isMobile = window.innerWidth < 720;
+    this.isMobile = window.innerWidth < this.md_breakpoint;
   }
 
   toggleMobileNavbar() {
@@ -189,6 +188,6 @@ export class NavbarComponent {
     const windowWidth = window.innerWidth;
     console.log(windowWidth);
 
-    this.isMobile = windowWidth < 720;
+    this.isMobile = windowWidth < this.md_breakpoint;
   }
 }
