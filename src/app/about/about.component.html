@@ -1,11 +1,4 @@
 <section id="about">
-  <!-- @if ((language$ | async) === 'pl') {
-  <p>Cześć, nazywam się</p>
-  <h1>Jerzy <br />Marczewski</h1>
-  } @else {
-  <p>Hi, my name is</p>
-  <h1>George <br />Marczewski</h1>
-  } -->
   @if ((language$ | async) === 'pl') {
   <h1 class="title">O Mnie</h1>
   } @else {
@@ -47,86 +40,13 @@
     <p>Here are some technologies I use in my projects:</p>
     }
     <div class="technologies">
+      @for (techology of techologies; track $index) {
       <app-technologies-button
-        technology-name="Angular"
-        technology-img-src="../../assets/technologies/angular.svg"
-        technology-website-url="https://angular.io/"
+        [technology-name]="techology.name"
+        [technology-img-src]="techology.src"
+        [technology-website-url]="techology.url"
       ></app-technologies-button>
-      <app-technologies-button
-        technology-name="NgRx"
-        technology-img-src="../../assets/technologies/ngrx.svg"
-        technology-website-url="https://ngrx.io/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="Sass"
-        technology-img-src="../../assets/technologies/scss.svg"
-        technology-website-url="https://sass-lang.com/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="React"
-        technology-img-src="../../assets/technologies/react.svg"
-        technology-website-url="https://react.dev/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="Redux"
-        technology-img-src="../../assets/technologies/redux.svg"
-        technology-website-url="https://redux.js.org/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="TypeScript"
-        technology-img-src="../../assets/technologies/typescript.svg"
-        technology-website-url="https://www.typescriptlang.org/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="JavaScript"
-        technology-img-src="../../assets/technologies/javascript.svg"
-        technology-website-url="https://developer.mozilla.org/en-US/docs/Web/javascript"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="HTML"
-        technology-img-src="../../assets/technologies/html.svg"
-        technology-website-url="#"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="CSS"
-        technology-img-src="../../assets/technologies/css.svg"
-        technology-website-url="https://developer.mozilla.org/en-US/docs/Web/CSS"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="MongoDB"
-        technology-img-src="../../assets/technologies/mongodb.svg"
-        technology-website-url="https://www.mongodb.com/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="Mongoose"
-        technology-img-src="../../assets/technologies/mongoose.svg"
-        technology-website-url="https://mongoosejs.com/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="MySQL"
-        technology-img-src="../../assets/technologies/mysql.svg"
-        technology-website-url="https://www.mysql.com/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="Node.js"
-        technology-img-src="../../assets/technologies/nodejs.svg"
-        technology-website-url="https://nodejs.org/en"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="Express"
-        technology-img-src="../../assets/technologies/express.svg"
-        technology-website-url="https://expressjs.com/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="Python"
-        technology-img-src="../../assets/technologies/python.svg"
-        technology-website-url="https://www.python.org/"
-      ></app-technologies-button>
-      <app-technologies-button
-        technology-name="Git"
-        technology-img-src="../../assets/technologies/git.svg"
-        technology-website-url="https://git-scm.com/"
-      ></app-technologies-button>
+      }
     </div>
   </div>
 </section>

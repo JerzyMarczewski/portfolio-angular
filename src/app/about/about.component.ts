@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { selectLanguage } from '../app.selectors';
 import { Store } from '@ngrx/store';
 import { TechnologiesButtonComponent } from '../technologies-button/technologies-button.component';
+import { allTechologies } from '../technologies';
 
 @Component({
   selector: 'app-about',
@@ -13,6 +14,7 @@ import { TechnologiesButtonComponent } from '../technologies-button/technologies
 })
 export class AboutComponent {
   language$ = this.store.select(selectLanguage);
+  techologies = allTechologies;
 
   constructor(private store: Store) {}
 }
