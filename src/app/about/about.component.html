@@ -1,1 +1,132 @@
-<p>about works!</p>
+<section id="about">
+  <!-- @if ((language$ | async) === 'pl') {
+  <p>Cześć, nazywam się</p>
+  <h1>Jerzy <br />Marczewski</h1>
+  } @else {
+  <p>Hi, my name is</p>
+  <h1>George <br />Marczewski</h1>
+  } -->
+  @if ((language$ | async) === 'pl') {
+  <h1 class="title">O Mnie</h1>
+  } @else {
+  <h1 class="title">About</h1>
+  }
+  <div class="text">
+    @if ((language$ | async) === 'pl') {
+    <p>
+      Cześć, mam na imię Jerzy. Jestem studentem informatyki na czwartym roku w
+      Szkole Głównej Gospodarstwa Wiejskiego w Warszawie. Od ponad czterech lat
+      pasjonuję się technologiami Webowymi i samodzielnie zgłębiam się w nie od
+      ponad czterech lat.
+    </p>
+    <p>
+      W wolnym czasie lubię gotować i jeździć na rowerze. Rozwijam się również w
+      dziedzinie Machine Learningu, nad którym pracuję w ramach mojej pracy
+      inżynierskiej.
+    </p>
+    <p>
+      Planuję ukończyć studia w maju i obecnie poszukuję możliwości rozwoju jako
+      Web Developer.
+    </p>
+    <p>Oto kilka technologii, których używam w moich projektach:</p>
+    } @else {
+    <p>
+      My name is George, and I am a fourth-year computer science student at the
+      Warsaw University of Life Sciences. Passionate about web development, I've
+      been exploring this field on my own for over four years.
+    </p>
+    <p>
+      In my free time, I enjoy cooking and cycling. Recently, I've embarked on a
+      journey into the realm of Machine Learning, actively incorporating it into
+      my thesis work.
+    </p>
+    <p>
+      I am set to graduate in May and am currently seeking opportunities as a
+      frontend developer.
+    </p>
+    <p>Here are some technologies I use in my projects:</p>
+    }
+    <div class="technologies">
+      <app-technologies-button
+        technology-name="Angular"
+        technology-img-src="../../assets/technologies/angular.svg"
+        technology-website-url="https://angular.io/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="NgRx"
+        technology-img-src="../../assets/technologies/ngrx.svg"
+        technology-website-url="https://ngrx.io/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="Sass"
+        technology-img-src="../../assets/technologies/scss.svg"
+        technology-website-url="https://sass-lang.com/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="React"
+        technology-img-src="../../assets/technologies/react.svg"
+        technology-website-url="https://react.dev/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="Redux"
+        technology-img-src="../../assets/technologies/redux.svg"
+        technology-website-url="https://redux.js.org/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="TypeScript"
+        technology-img-src="../../assets/technologies/typescript.svg"
+        technology-website-url="https://www.typescriptlang.org/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="JavaScript"
+        technology-img-src="../../assets/technologies/javascript.svg"
+        technology-website-url="https://developer.mozilla.org/en-US/docs/Web/javascript"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="HTML"
+        technology-img-src="../../assets/technologies/html.svg"
+        technology-website-url="#"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="CSS"
+        technology-img-src="../../assets/technologies/css.svg"
+        technology-website-url="https://developer.mozilla.org/en-US/docs/Web/CSS"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="MongoDB"
+        technology-img-src="../../assets/technologies/mongodb.svg"
+        technology-website-url="https://www.mongodb.com/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="Mongoose"
+        technology-img-src="../../assets/technologies/mongoose.svg"
+        technology-website-url="https://mongoosejs.com/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="MySQL"
+        technology-img-src="../../assets/technologies/mysql.svg"
+        technology-website-url="https://www.mysql.com/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="Node.js"
+        technology-img-src="../../assets/technologies/nodejs.svg"
+        technology-website-url="https://nodejs.org/en"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="Express"
+        technology-img-src="../../assets/technologies/express.svg"
+        technology-website-url="https://expressjs.com/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="Python"
+        technology-img-src="../../assets/technologies/python.svg"
+        technology-website-url="https://www.python.org/"
+      ></app-technologies-button>
+      <app-technologies-button
+        technology-name="Git"
+        technology-img-src="../../assets/technologies/git.svg"
+        technology-website-url="https://git-scm.com/"
+      ></app-technologies-button>
+    </div>
+  </div>
+</section>
