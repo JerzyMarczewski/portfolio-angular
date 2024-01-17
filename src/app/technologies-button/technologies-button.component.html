@@ -1,0 +1,12 @@
+<button
+  class="technologiesButton"
+  (mouseover)="handleMouseOver()"
+  (mouseleave)="handleMouseLeave()"
+>
+  <a href="{{ url }}">
+    <img src="{{ src }}" alt="{{ imgAlt }}" />
+  </a>
+  <div class="tooltip" [@showTooltipAnimation]="isHovered ? 'shown' : 'hidden'">
+    {{ name }}
+  </div>
+</button>
