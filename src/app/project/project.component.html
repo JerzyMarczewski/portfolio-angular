@@ -1,0 +1,43 @@
+<div class="project">
+  <div class="content">
+    <aside class="overview">
+      <h3 class="title">{{ name }}</h3>
+
+      @if ((language$ | async) === 'pl') {
+      <p>{{ descPL }}</p>
+      <p>Wykorzystane technologie:</p>
+      } @else {
+      <p>{{ descEN }}</p>
+      <p>Technologies used:</p>
+      }
+      <div class="technologies">
+        @for (technology of technologies; track $index) {
+        <app-technologies-button
+          [technology-name]="technology.name"
+          [technology-img-src]="technology.src"
+          [technology-website-url]="technology.url"
+        ></app-technologies-button>
+        }
+      </div>
+
+      @if ((language$ | async) === 'pl') {
+      <a
+        [href]="url"
+        (mouseover)="handleMouseOver()"
+        (mouseleave)="handleMouseLeave()"
+        [@hoverAnimation]="isHovered ? 'active' : 'inactive'"
+        >kod</a
+      >
+      } @else {
+      <a
+        [href]="url"
+        (mouseover)="handleMouseOver()"
+        (mouseleave)="handleMouseLeave()"
+        [@hoverAnimation]="isHovered ? 'active' : 'inactive'"
+        >code</a
+      >
+      }
+    </aside>
+    <img [src]="src" [alt]="alt" />
+  </div>
+</div>
