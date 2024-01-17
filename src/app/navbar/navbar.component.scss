@@ -37,6 +37,10 @@ nav.navbar {
     text-align: center;
     overflow: hidden;
 
+    @media only screen and (min-width: $xl2) {
+      max-width: calc(0.9 * $xl2);
+    }
+
     @media only screen and (min-width: $md) {
       display: flex;
       flex-direction: row;
@@ -54,30 +58,30 @@ nav.navbar {
       translate: 0%;
     }
 
-    @media only screen and (min-width: $lg) {
-      margin: auto;
-    }
-
-    @media only screen and (min-width: $xl) {
-
-    }
-
-    @media only screen and (min-width: $xl2) {
-      max-width: calc(0.9 * $xl2);
-
-    }
-
     a {
       all: unset;
       cursor: pointer;
       text-transform: uppercase;
+    }
+
+    .separator {
+      display: none;
+      width: 0.05rem;
+      height: 2rem;
+      margin: 0 0.5rem;
+      background-color: $primary-dark;
+      opacity: 0.4;
+      border-radius: 1rem;
+
+      @media only screen and (min-width: $md) {
+        display: block;
+      }
     }
   }
 
   .hamburger {
     display: block;
     margin-right: 2rem;
-  
     cursor: pointer;
   
     @media only screen and (min-width: $md) {

@@ -186,7 +186,6 @@ export class NavbarComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     const windowWidth = window.innerWidth;
-    console.log(windowWidth);
 
     this.isMobile = windowWidth < this.md_breakpoint;
   }
