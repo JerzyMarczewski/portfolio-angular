@@ -1,1 +1,18 @@
-<p>hero works!</p>
+<div id="hero">
+  <div class="heroContent">
+    <div class="heroText" [@fadeIn]="heroTextShown ? 'shown' : ''">
+      @if ((language$ | async) === 'pl') {
+      <p>Cześć, nazywam się</p>
+      <h1>Jerzy <br />Marczewski</h1>
+      } @else {
+      <p>Hi, my name is</p>
+      <h1>George <br />Marczewski</h1>
+      }
+    </div>
+    <img
+      class="portrait"
+      src="../../assets/portrait.png"
+      alt="Portrait image"
+    />
+  </div>
+</div>
