@@ -1,1 +1,104 @@
-<p>contact works!</p>
+<footer id="contact">
+  <div class="contacts">
+    <a
+      href="https://www.linkedin.com/in/jerzy-marczewski/"
+      class="contactsIcon"
+      (mouseover)="handleContactItemMouseOver('linkedin')"
+      (mouseleave)="handleContactItemMouseLeave('linkedin')"
+      [@raiseUp]="linkedInIsHovered ? 'raised' : 'notRaised'"
+      ><img src="../../assets/contact-icons/linkedin.svg" alt=""
+    /></a>
+    <a
+      href="https://github.com/JerzyMarczewski"
+      class="contactsIcon"
+      (mouseover)="handleContactItemMouseOver('github')"
+      (mouseleave)="handleContactItemMouseLeave('github')"
+      [@raiseUp]="githubIsHovered ? 'raised' : 'notRaised'"
+      ><img src="../../assets/contact-icons/github.svg" alt=""
+    /></a>
+    <a
+      href="mailto:jerzy.marczewski2@gmail.com"
+      class="contactsIcon"
+      (mouseover)="handleContactItemMouseOver('email')"
+      (mouseleave)="handleContactItemMouseLeave('email')"
+      [@raiseUp]="emailIsHovered ? 'raised' : 'notRaised'"
+      ><img src="../../assets/contact-icons/email.svg" alt=""
+    /></a>
+  </div>
+  <ul class="menu">
+    @if ((language$ | async) === "pl") {
+    <li
+      (mouseover)="handleMenuItemMouseOver('home')"
+      (mouseleave)="handleMenuItemMouseLeave('home')"
+      (click)="scrollToSection('hero')"
+      [@fadeIn]="homeIsHovered ? 'unfaded' : 'faded'"
+    >
+      strona główna
+    </li>
+    <li
+      href=""
+      (mouseover)="handleMenuItemMouseOver('about')"
+      (mouseleave)="handleMenuItemMouseLeave('about')"
+      (click)="scrollToSection('about')"
+      [@fadeIn]="aboutIsHovered ? 'unfaded' : 'faded'"
+    >
+      o mnie
+    </li>
+    <li
+      href=""
+      (mouseover)="handleMenuItemMouseOver('projects')"
+      (mouseleave)="handleMenuItemMouseLeave('projects')"
+      (click)="scrollToSection('projects')"
+      [@fadeIn]="projectsIsHovered ? 'unfaded' : 'faded'"
+    >
+      projekty
+    </li>
+    <li
+      href=""
+      (mouseover)="handleMenuItemMouseOver('contact')"
+      (mouseleave)="handleMenuItemMouseLeave('contact')"
+      (click)="scrollToSection('contact')"
+      [@fadeIn]="contactIsHovered ? 'unfaded' : 'faded'"
+    >
+      kontakt
+    </li>
+    } @else {
+    <li
+      (mouseover)="handleMenuItemMouseOver('home')"
+      (mouseleave)="handleMenuItemMouseLeave('home')"
+      (click)="scrollToSection('hero')"
+      [@fadeIn]="homeIsHovered ? 'unfaded' : 'faded'"
+    >
+      home
+    </li>
+    <li
+      href=""
+      (mouseover)="handleMenuItemMouseOver('about')"
+      (mouseleave)="handleMenuItemMouseLeave('about')"
+      (click)="scrollToSection('about')"
+      [@fadeIn]="aboutIsHovered ? 'unfaded' : 'faded'"
+    >
+      about
+    </li>
+    <li
+      href=""
+      (mouseover)="handleMenuItemMouseOver('projects')"
+      (mouseleave)="handleMenuItemMouseLeave('projects')"
+      (click)="scrollToSection('projects')"
+      [@fadeIn]="projectsIsHovered ? 'unfaded' : 'faded'"
+    >
+      projects
+    </li>
+    <li
+      href=""
+      (mouseover)="handleMenuItemMouseOver('contact')"
+      (mouseleave)="handleMenuItemMouseLeave('contact')"
+      (click)="scrollToSection('contact')"
+      [@fadeIn]="contactIsHovered ? 'unfaded' : 'faded'"
+    >
+      contact
+    </li>
+    }
+  </ul>
+  <p>© Copyright 2024 | Jerzy Marczewski</p>
+</footer>
