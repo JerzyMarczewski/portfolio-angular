@@ -24,8 +24,8 @@ button.technologiesButton {
 
   > .tooltip {
     position: absolute;
-    left: 90%;
-    top: -120%;
+    left: 50%;
+    bottom: 3rem;
     z-index: 2;
     
     padding: 0.25rem 0.5rem;
@@ -33,6 +33,14 @@ button.technologiesButton {
 
     background-color: $primary-dark;
     color: $primary-light;
+
+    @media only screen and (min-width: $md) {
+      bottom: 2.5rem;
+    }
+
+    @media only screen and (min-width: $xl) {
+      bottom: 2rem;
+    }
   }
 
   
