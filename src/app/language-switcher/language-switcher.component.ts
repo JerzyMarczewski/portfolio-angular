@@ -10,9 +10,6 @@ import {
   style,
   animate,
   transition,
-  query,
-  stagger,
-  keyframes,
 } from '@angular/animations';
 
 @Component({

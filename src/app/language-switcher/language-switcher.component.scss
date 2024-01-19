@@ -10,11 +10,8 @@ $knob-margin: calc(calc($toggler-height - $knob-size) / 2);
   width: $toggler-width;
   height: $toggler-height;
   border-radius: $toggler-width;
-  // border: $toggler-border-width solid $primary-dark;
   background-color: #BDC1C8;
   box-shadow: 0 0 0.25rem #BDC1C8;
-  margin: 0 1.5rem;
-
   cursor: pointer;
 
   .knob {
