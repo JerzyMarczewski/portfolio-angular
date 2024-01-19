@@ -2,22 +2,72 @@
   class="navbar"
   [@separateNavbar]="pageScrolled ? 'separate' : 'unseparate'"
 >
-  <div
+  <ul
     class="nav-menu"
     [@openClose]="!isMobile || hamburgerActive ? 'open' : 'closed'"
   >
     @if ((language$ | async) === "pl") {
-    <a href="#about">o mnie</a>
-    <a href="#projects">projekty</a>
-    <a href="#contact">kontakt</a>
+    <li
+      (click)="handleNavOptionClick()"
+      (click)="scrollToSection('hero')"
+      [ngClass]="{ scrolled: pageScrolled }"
+    >
+      strona główna
+    </li>
+    <li
+      (click)="handleNavOptionClick()"
+      (click)="scrollToSection('about')"
+      [ngClass]="{ scrolled: pageScrolled }"
+    >
+      o mnie
+    </li>
+    <li
+      (click)="handleNavOptionClick()"
+      (click)="scrollToSection('projects')"
+      [ngClass]="{ scrolled: pageScrolled }"
+    >
+      projekty
+    </li>
+    <li
+      (click)="handleNavOptionClick()"
+      (click)="scrollToSection('contact')"
+      [ngClass]="{ scrolled: pageScrolled }"
+    >
+      kontakt
+    </li>
     } @else {
-    <a href="#about">about</a>
-    <a href="#projects">projects</a>
-    <a href="#contact">contact</a>
+    <li
+      (click)="handleNavOptionClick()"
+      (click)="scrollToSection('hero')"
+      [ngClass]="{ scrolled: pageScrolled }"
+    >
+      home
+    </li>
+    <li
+      (click)="handleNavOptionClick()"
+      (click)="scrollToSection('about')"
+      [ngClass]="{ scrolled: pageScrolled }"
+    >
+      about
+    </li>
+    <li
+      (click)="handleNavOptionClick()"
+      (click)="scrollToSection('projects')"
+      [ngClass]="{ scrolled: pageScrolled }"
+    >
+      projects
+    </li>
+    <li
+      (click)="handleNavOptionClick()"
+      (click)="scrollToSection('contact')"
+      [ngClass]="{ scrolled: pageScrolled }"
+    >
+      contact
+    </li>
     }
     <div class="separator"></div>
     <app-language-switcher></app-language-switcher>
-  </div>
+  </ul>
   <div class="hamburger" (click)="toggleMobileNavbar()">
     <span
       class="bar"

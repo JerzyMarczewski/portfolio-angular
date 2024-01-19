@@ -1,6 +1,5 @@
 import { Component, HostListener } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { Language } from '../../shared-types';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { selectLanguage } from '../app.selectors';
 import { Store } from '@ngrx/store';
@@ -13,6 +12,7 @@ import {
   transition,
   keyframes,
 } from '@angular/animations';
+import { ScrollService } from '../scroll.service';
 
 @Component({
   selector: 'app-navbar',
@@ -167,7 +167,11 @@ export class NavbarComponent {
   isMobile: boolean = true;
   md_breakpoint = 768;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private scrollService: ScrollService) {}
+
+  scrollToSection(sectionId: string): void {
+    this.scrollService.scrollToSection(sectionId);
+  }
 
   ngOnInit() {
     this.isMobile = window.innerWidth < this.md_breakpoint;
@@ -175,6 +179,10 @@ export class NavbarComponent {
 
   toggleMobileNavbar() {
     this.hamburgerActive = !this.hamburgerActive;
+  }
+
+  handleNavOptionClick() {
+    this.hamburgerActive = false;
   }
 
   @HostListener('window:scroll', ['$event'])

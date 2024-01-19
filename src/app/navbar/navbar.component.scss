@@ -16,6 +16,10 @@ nav.navbar {
   z-index: 10;
   background-color: $primary-yellow;
 
+  @media only screen and (min-width: $md) {
+    justify-content: center;
+  }
+
   .nav-menu {
     display: flex;
     flex-direction: column;
@@ -37,10 +41,6 @@ nav.navbar {
     text-align: center;
     overflow: hidden;
 
-    @media only screen and (min-width: $xl2) {
-      max-width: calc(0.9 * $xl2);
-    }
-
     @media only screen and (min-width: $md) {
       display: flex;
       flex-direction: row;
@@ -58,15 +58,37 @@ nav.navbar {
       translate: 0%;
     }
 
-    a {
+    @media only screen and (min-width: $xl2) {
+      max-width: calc(0.9 * $xl2);
+    }
+
+    > li {
       all: unset;
+      position: relative;
       cursor: pointer;
       text-transform: uppercase;
+
+      &:hover::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        // bottom: 0;
+        top: 100%;
+        width: 100%;
+        height: 0.2rem;
+        background-color: $primary-dark;
+
+        animation: underline 0.4s ease;
+      }
+
+      &.scrolled:hover::after {
+        background-color: $primary-yellow; 
+      }
     }
 
     .separator {
       display: none;
-      width: 0.05rem;
+      width: 0.06rem;
       height: 2rem;
       margin: 0 0.5rem;
       background-color: $primary-dark;
@@ -103,6 +125,14 @@ nav.navbar {
   }
 }
 
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 
 
 
