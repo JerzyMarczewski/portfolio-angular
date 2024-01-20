@@ -21,6 +21,7 @@ export class ProjectsComponent {
       'NgRx',
       'Jasmine',
       'Karma',
+      'Sass',
       'TypeScript',
       'JavaScript',
       'HTML',
