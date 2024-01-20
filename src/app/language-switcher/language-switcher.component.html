@@ -1,7 +1,4 @@
-<div class="languageSwitcher" (click)="toggleLanguage()">
-  <!-- <div (click)="changeLanguage('en')">en</div>
-  <div (click)="changeLanguage('pl')">pl</div> -->
-
+<div class="languageSwitcher" (click)="handleToggleLanguage()">
   <div
     class="knob"
     [ngClass]="{
@@ -14,12 +11,12 @@
     class="label en"
     [@labelAnimation]="(language$ | async) === 'en' ? 'shown' : 'hidden'"
   >
-    EN
+    en
   </h5>
   <h5
     class="label pl"
     [@labelAnimation]="(language$ | async) === 'pl' ? 'shown' : 'hidden'"
   >
-    PL
+    pl
   </h5>
 </div>

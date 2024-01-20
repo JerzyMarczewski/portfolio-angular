@@ -15,6 +15,20 @@ import { allTechologies } from '../technologies';
 export class ProjectsComponent {
   language$ = this.store.select(selectLanguage);
 
+  portfolioTechnologies = allTechologies.filter((techology) =>
+    [
+      'Angular',
+      'NgRx',
+      'Jasmine',
+      'Karma',
+      'TypeScript',
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'Figma',
+    ].includes(techology.name)
+  );
+
   asciiFilterTechnologies = allTechologies.filter((techology) =>
     [
       'React',

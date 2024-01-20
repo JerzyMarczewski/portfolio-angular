@@ -11,11 +11,6 @@ export const allTechologies: Technology[] = [
     url: 'https://angular.io/',
   },
   {
-    name: 'React',
-    src: '../../assets/technologies/react.svg',
-    url: 'https://react.dev/',
-  },
-  {
     name: 'NgRx',
     src: '../../assets/technologies/ngrx.svg',
     url: 'https://ngrx.io/',
@@ -29,6 +24,11 @@ export const allTechologies: Technology[] = [
     name: 'Karma',
     src: '../../assets/technologies/karma.svg',
     url: 'https://github.com/karma-runner/karma',
+  },
+  {
+    name: 'React',
+    src: '../../assets/technologies/react.svg',
+    url: 'https://react.dev/',
   },
   {
     name: 'Redux',

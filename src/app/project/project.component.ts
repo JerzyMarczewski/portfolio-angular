@@ -3,14 +3,13 @@ import { AsyncPipe } from '@angular/common';
 import { selectLanguage } from '../app.selectors';
 import { Store } from '@ngrx/store';
 import { TechnologiesButtonComponent } from '../technologies-button/technologies-button.component';
-import { allTechologies, Technology } from '../technologies';
+import { Technology } from '../technologies';
 import {
   trigger,
   state,
   style,
   animate,
   transition,
-  keyframes,
 } from '@angular/animations';
 
 @Component({

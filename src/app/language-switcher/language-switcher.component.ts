@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Language } from '../../shared-types';
 import { Store } from '@ngrx/store';
 import { selectLanguage } from '../app.selectors';
-import { setLanguage, toggleLanguage } from '../app.actions';
+import { toggleLanguage } from '../app.actions';
 import { AsyncPipe, NgClass } from '@angular/common';
 import {
   trigger,
@@ -61,11 +60,7 @@ export class LanguageSwitcherComponent {
 
   constructor(private store: Store) {}
 
-  changeLanguage(language: Language) {
-    this.store.dispatch(setLanguage({ language }));
-  }
-
-  toggleLanguage() {
+  handleToggleLanguage() {
     this.store.dispatch(toggleLanguage());
   }
 }

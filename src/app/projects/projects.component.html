@@ -4,7 +4,14 @@
   } @else {
   <h1 class="title">Projects</h1>
   }
-
+  <app-project
+    name="Portfolio"
+    src="../../assets/project-previews/portfolio.png"
+    desc-pl="Aplikacja webowa zaprojektowana w programie Figma. Stanowi ona prezentację moich umiejętności, zainteresowań i projektów. Obsługując zarówno języki polski, jak i angielski, zapewnia dostępność dla szerszej publiczności. W celu poprawy UX zaimplementowałem moduł animacji Angulara. Dodatkowo, wykorzystuję NgRx do ułatwienia płynnej komunikacji między komponentami a stanem aplikacji. Aplikacja przeszła testy przy użyciu Jasmine z Karma, aby zagwarantować funkcjonalność i niezawodność."
+    desc-en="A web application designed in Figma. It serves as a showcase of my skills, interests, and projects. Supporting both Polish and English languages, it ensures accessibility for a broader audience. To enhance the user experience, I implemented Angular's animation module. Additionally, I utilize NgRx to facilitate smoother communication between components and the application state. The application underwent testing using Jasmine with Karma to ensure functionality and reliability."
+    url="https://github.com/JerzyMarczewski/portfolio-angular"
+    [technologies]="portfolioTechnologies"
+  ></app-project>
   <app-project
     name="ASCII Filter"
     src="../../assets/project-previews/ascii-filter.png"
@@ -16,8 +23,7 @@
   <app-project
     name="REMINDERS"
     src="../../assets/project-previews/mern-reminders.png"
-    desc-pl="User
-    Aplikacja służy za system do zarządzania zadaniami, który czerpie inspirację z aplikacji Reminders firmy Apple. Oferuje ona użytkownikom płynne i responsywne doświadczenie. Interfejs użytkownika został zaprojektowany w programie Figma. Aplikacja umożliwia użytkownikom łatwe tworzenie, edytowanie i usuwanie zadań oraz list. Dodając personalny akcent, użytkownicy mogą dostosowywać kolory i ikony list, aby dostosować swoje doświadczenie zarządzania zadaniami. Aplikacja posiada system uwierzytelniania użytkownika, zapewniający bezpieczny dostęp poprzez proces logowania i rejestracji, z kompletnym haszowaniem haseł dla zwiększenia bezpieczeństwa. Dane użytkowników są bezpiecznie przechowywane na serwerze, a aplikacja korzysta z RESTful API , ułatwiając płynną komunikację i interakcję między klientem a serwerem."
+    desc-pl="Aplikacja służy za system do zarządzania zadaniami, który czerpie inspirację z aplikacji Reminders firmy Apple. Oferuje ona użytkownikom płynne i responsywne doświadczenie. Interfejs użytkownika został zaprojektowany w programie Figma. Aplikacja umożliwia użytkownikom łatwe tworzenie, edytowanie i usuwanie zadań oraz list. Dodając personalny akcent, użytkownicy mogą dostosowywać kolory i ikony list, aby dostosować swoje doświadczenie zarządzania zadaniami. Aplikacja posiada system uwierzytelniania użytkownika, zapewniający bezpieczny dostęp poprzez proces logowania i rejestracji, z kompletnym haszowaniem haseł dla zwiększenia bezpieczeństwa. Dane użytkowników są bezpiecznie przechowywane na serwerze, a aplikacja korzysta z RESTful API , ułatwiając płynną komunikację i interakcję między klientem a serwerem."
     desc-en="The Reminders Web Application is a task management system that draws inspiration from Apple's Reminders application, offering users a seamless and responsive experience. The UI was designed in Figma. This application allows users to effortlessly create, edit, and delete tasks and lists. Adding a personalized touch, users can customize list colors and icons to tailor their task management experience. The application boasts a user authentication system, ensuring secure access through a user login and registration process, complete with password hashing for enhanced security. With user data securely stored on the server, the Reminders Web Application employs a RESTful API, facilitating smooth communication and interaction between the client and server."
     url="https://github.com/JerzyMarczewski/MERN-Reminders"
     [technologies]="mernRemindersTechnologies"
