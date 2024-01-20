@@ -21,6 +21,16 @@ export const allTechologies: Technology[] = [
     url: 'https://ngrx.io/',
   },
   {
+    name: 'Jasmine',
+    src: '../../assets/technologies/jasmine.svg',
+    url: 'https://jasmine.github.io/',
+  },
+  {
+    name: 'Karma',
+    src: '../../assets/technologies/karma.svg',
+    url: 'https://github.com/karma-runner/karma',
+  },
+  {
     name: 'Redux',
     src: '../../assets/technologies/redux.svg',
     url: 'https://redux.js.org/',
