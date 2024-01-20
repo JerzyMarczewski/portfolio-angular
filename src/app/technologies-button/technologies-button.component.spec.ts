@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { TechnologiesButtonComponent } from './technologies-button.component';
 
 describe('TechnologiesButtonComponent', () => {
@@ -8,10 +8,10 @@ describe('TechnologiesButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TechnologiesButtonComponent]
-    })
-    .compileComponents();
-    
+      imports: [TechnologiesButtonComponent],
+      providers: [provideAnimations()],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TechnologiesButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,5 +19,15 @@ describe('TechnologiesButtonComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should handle mouse over', () => {
+    component.handleMouseOver();
+    expect(component.isHovered).toBe(true);
+  });
+
+  it('should handle mouse leave', () => {
+    component.handleMouseLeave();
+    expect(component.isHovered).toBe(false);
   });
 });
