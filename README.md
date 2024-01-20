@@ -1,27 +1,20 @@
-# PortfolioAngular
+# Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+---
 
-## Development server
+A web application designed in Figma and built with Angular. It serves as a showcase of my skills, interests, and projects. Supporting both Polish and English languages, it ensures accessibility for a broader audience. To enhance the user experience, I implemented Angular's animation module. Additionally, I utilize NgRx to facilitate smoother communication between components and the application state. The application underwent testing using Jasmine with Karma to ensure functionality and reliability.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+##### Technologies I used:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<div>
+  <img src="./src/assets/technologies/angular.svg" title="Angular" alt="Angular Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/ngrx.svg" title="NgRx" alt="NgRx Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/jasmine.svg" title="Jasmine" alt="Jasmine Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/karma.svg" title="Karma" alt="Karma Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/typescript.svg" title="TypeScript" alt="TypeScript Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/javascript.svg" title="JavaScript" alt="JavaScript Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/html.svg" title="HTML" alt="HTML Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/scss.svg" title="Sass" alt="Sass Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/css.svg" title="CSS" alt="CSS Icon" width="40" height="40"/>&nbsp;
+  <img src="./src/assets/technologies/figma.svg" title="Figma" alt="Figma Icon" width="40" height="40"/>&nbsp;
+</div>
