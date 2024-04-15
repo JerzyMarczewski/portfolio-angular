@@ -11,6 +11,16 @@ export const allTechologies: Technology[] = [
     url: 'https://angular.io/',
   },
   {
+    name: 'Angular Material',
+    src: '../../assets/technologies/angularmaterial.svg',
+    url: 'https://material.angular.io/',
+  },
+  {
+    name: 'RxJS',
+    src: '../../assets/technologies/rxjs.svg',
+    url: 'https://rxjs.dev/',
+  },
+  {
     name: 'NgRx',
     src: '../../assets/technologies/ngrx.svg',
     url: 'https://ngrx.io/',
@@ -69,6 +79,11 @@ export const allTechologies: Technology[] = [
     name: 'Mongoose',
     src: '../../assets/technologies/mongoose.svg',
     url: 'https://mongoosejs.com/',
+  },
+  {
+    name: 'Firebase',
+    src: '../../assets/technologies/firebase.svg',
+    url: 'https://firebase.google.com/',
   },
   {
     name: 'Supabase',
