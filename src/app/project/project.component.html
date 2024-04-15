@@ -20,24 +20,20 @@
         }
       </div>
 
-      @if ((language$ | async) === 'pl') {
-      <a
-        [href]="url"
-        (mouseover)="handleMouseOver()"
-        (mouseleave)="handleMouseLeave()"
-        [@hoverAnimation]="isHovered ? 'active' : 'inactive'"
-        >kod</a
-      >
-      } @else {
-      <a
-        [href]="url"
-        (mouseover)="handleMouseOver()"
-        (mouseleave)="handleMouseLeave()"
-        [@hoverAnimation]="isHovered ? 'active' : 'inactive'"
-        >code</a
-      >
-      }
+      <div class="actions">
+        @if (codeUrl) {
+        <a [href]="codeUrl">
+          <button>
+            {{ (language$ | async) === "pl" ? "kod" : "code" }}
+          </button>
+        </a>
+        } @if (demoUrl) {
+        <a [href]="demoUrl">
+          <button>demo</button>
+        </a>
+        }
+      </div>
     </aside>
-    <img [src]="src" [alt]="alt" />
+    <img [src]="previewImgSrc" [alt]="this.name + ' preview'" />
   </div>
 </div>
