@@ -3,14 +3,7 @@ import { AsyncPipe } from '@angular/common';
 import { selectLanguage } from '../app.selectors';
 import { Store } from '@ngrx/store';
 import { TechnologiesButtonComponent } from '../technologies-button/technologies-button.component';
-import { Technology } from '../technologies';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
+import { Technology, allTechologies } from '../technologies';
 
 @Component({
   selector: 'app-project',
@@ -18,45 +11,39 @@ import {
   imports: [AsyncPipe, TechnologiesButtonComponent],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss',
-  animations: [
-    trigger('hoverAnimation', [
-      state(
-        'inactive',
-        style({
-          boxShadow: 'none',
-        })
-      ),
-      state(
-        'active',
-        style({
-          boxShadow: '-10px -50px 0px #FFBD59 inset',
-        })
-      ),
-      transition('inactive => active', [animate('0.1s')]),
-      transition('active => inactive', [animate('0.1s')]),
-    ]),
-  ],
 })
 export class ProjectComponent {
   @Input({ required: true }) name!: string;
-  @Input({ required: true }) src!: string;
+  @Input({ required: true, alias: 'preview-img-src' }) previewImgSrc!: string;
   @Input({ required: true, alias: 'desc-pl' }) descPL!: string;
   @Input({ required: true, alias: 'desc-en' }) descEN!: string;
-  @Input({ required: true }) url!: string;
-  @Input({ required: true, alias: 'technologies' })
-  technologies!: Technology[];
+  @Input({ alias: 'code-url' }) codeUrl?: string;
+  @Input({ alias: 'demo-url' }) demoUrl?: string;
+  @Input({ required: true, alias: 'technology-names' })
+  technologyNames!: string[];
 
   language$ = this.store.select(selectLanguage);
-  isHovered = false;
-  alt = `${this.name} preview`;
+
+  technologies!: Technology[];
+
+  ngOnInit() {
+    this.technologies = this.getTechnologies(this.technologyNames);
+  }
 
   constructor(private store: Store) {}
 
-  handleMouseOver() {
-    this.isHovered = true;
-  }
+  private getTechnologies(names: string[]): Technology[] {
+    const correctNames = names.filter((name) => {
+      if (allTechologies.map((element) => element.name).includes(name)) {
+        return true;
+      } else {
+        console.error(`${name} not present in saved technologies.`);
+        return false;
+      }
+    });
 
-  handleMouseLeave() {
-    this.isHovered = false;
+    return correctNames.map((name) =>
+      allTechologies.find((element) => element.name === name)
+    ) as Technology[];
   }
 }
