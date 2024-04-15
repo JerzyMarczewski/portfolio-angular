@@ -48,20 +48,41 @@
         gap: 0.5rem;
       }
 
-      > a {
-        all: unset;
-        cursor: pointer;
+      .actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        text-align: center;
-        text-transform: uppercase;
-        font-family: 'Press Start 2P', system-ui;
-        font-size: 0.75rem;
+        > a {
+          all: unset;
+          cursor: pointer;
+  
+          text-align: center;
+          text-transform: uppercase;
+          font-family: 'Press Start 2P', system-ui;
+          font-size: 0.8rem;
+  
+          width: 6rem;
+          padding: 1rem 0;
+          margin: 2rem 1rem 0 1rem;
+          border: 0.25rem solid $primary-dark;
+          border-radius: 1.75rem;
 
-        width: 6rem;
-        padding: 1rem 0;
-        margin: 2rem auto;
-        border: 0.1rem solid $primary-dark;
-        border-radius: 0.5rem;
+          box-shadow: none;
+
+          transition: box-shadow 0.2s ease-in-out;
+        
+          &:hover {
+            box-shadow: -10px -50px 0px #FFBD59 inset;
+            transition: box-shadow 0.2s ease-in-out;
+
+          }
+        }
+
+        button {
+          all: unset;
+          cursor: pointer;
+        }
       }
     }
   }
