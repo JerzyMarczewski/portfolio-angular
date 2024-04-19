@@ -6,6 +6,7 @@ import { routes } from './app.routes';
 import { provideStore, provideState } from '@ngrx/store';
 import { appReducer } from './app.reducer';
 import { ScrollService } from './scroll.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideState({ name: 'app', reducer: appReducer }),
     provideAnimations(),
-    ScrollService,
+    provideAnimationsAsync(),
   ],
 };
