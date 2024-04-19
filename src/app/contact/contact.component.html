@@ -6,24 +6,33 @@
       (mouseover)="handleContactItemMouseOver('linkedin')"
       (mouseleave)="handleContactItemMouseLeave('linkedin')"
       [@raiseUp]="linkedInIsHovered ? 'raised' : 'notRaised'"
-      ><img src="../../assets/contact-icons/linkedin.svg" alt=""
-    /></a>
+    >
+      <img src="../../assets/contact-icons/linkedin.svg" alt="Linkedin Icon" />
+      <p>jerzy-marczewski</p>
+    </a>
     <a
       href="https://github.com/JerzyMarczewski"
       class="contactsIcon"
       (mouseover)="handleContactItemMouseOver('github')"
       (mouseleave)="handleContactItemMouseLeave('github')"
       [@raiseUp]="githubIsHovered ? 'raised' : 'notRaised'"
-      ><img src="../../assets/contact-icons/github.svg" alt=""
-    /></a>
+      ><img src="../../assets/contact-icons/github.svg" alt="GitHub Icon" />
+      <p>JerzyMarczewski</p></a
+    >
     <a
-      href="mailto:jerzy.marczewski2@gmail.com"
-      class="contactsIcon"
+      class="contactsIcon email"
       (mouseover)="handleContactItemMouseOver('email')"
       (mouseleave)="handleContactItemMouseLeave('email')"
       [@raiseUp]="emailIsHovered ? 'raised' : 'notRaised'"
-      ><img src="../../assets/contact-icons/email.svg" alt=""
-    /></a>
+      #tooltip="matTooltip"
+      [matTooltip]="
+        (language$ | async) === 'pl' ? 'Kopiuj do schowka' : 'Copy to clipboard'
+      "
+      matTooltipPosition="above"
+      (click)="copyToClipboard('jerzy.marczewski2@gmail.com'); tooltip.show()"
+      ><img src="../../assets/contact-icons/email.svg" alt="Email Icon" />
+      <p>jerzy.marczewski2&#64;gmail.com</p></a
+    >
   </div>
   <ul class="menu">
     @if ((language$ | async) === "pl") {

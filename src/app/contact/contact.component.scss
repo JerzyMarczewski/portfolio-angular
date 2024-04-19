@@ -1,19 +1,5 @@
 @import '../../variables';
 
-$wave-width: 1440px;
-$wave-height: 320px;
-// $wave-width: 2132.9px;
-// $wave-height: 59.45px;
-
-@keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-position-x: 0;
-  }
-}
-
 #contact {
   position: relative;
   display: flex;
@@ -25,18 +11,36 @@ $wave-height: 320px;
   margin-top: 6rem;
   padding: 5rem 0;
   width: 100%;
-    // background-color: #72727E;
   background-color: $primary-cool-gray;
   color: $primary-light;
 
   > .contacts {
     display: flex;
+    flex-direction: column;
     gap: 0.5rem;
 
-    img {
-      color: $primary-light;
-      width: 2rem;
-      height: auto;
+    
+
+    a {
+      all: unset;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+
+
+      img {
+        color: $primary-light;
+        width: 2rem;
+        height: auto;
+      }
+
+      p {margin: 0;}
+
+      &.email {
+        cursor: copy;
+      }
     }
   }
   

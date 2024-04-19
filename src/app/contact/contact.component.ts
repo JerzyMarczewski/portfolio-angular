@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AsyncPipe } from '@angular/common';
 import {
@@ -10,11 +10,13 @@ import {
 } from '@angular/animations';
 import { ScrollService } from '../scroll.service';
 import { selectLanguage } from '../app.selectors';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, MatTooltipModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   animations: [
@@ -61,7 +63,11 @@ export class ContactComponent {
   projectsIsHovered = false;
   contactIsHovered = false;
 
-  constructor(private scrollService: ScrollService, private store: Store) {}
+  constructor(
+    private scrollService: ScrollService,
+    private store: Store,
+    private clipboard: Clipboard
+  ) {}
 
   handleContactItemMouseOver(contactItem: 'linkedin' | 'github' | 'email') {
     if (contactItem === 'linkedin') this.linkedInIsHovered = true;
@@ -93,5 +99,9 @@ export class ContactComponent {
 
   scrollToSection(sectionId: string): void {
     this.scrollService.scrollToSection(sectionId);
+  }
+
+  copyToClipboard(text: string): void {
+    this.clipboard.copy(text);
   }
 }
