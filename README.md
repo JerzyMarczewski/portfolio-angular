@@ -18,3 +18,7 @@ A web application designed in Figma and built with Angular. It serves as a showc
   <img src="./src/assets/technologies/css.svg" title="CSS" alt="CSS Icon" width="40" height="40"/>&nbsp;
   <img src="./src/assets/technologies/figma.svg" title="Figma" alt="Figma Icon" width="40" height="40"/>&nbsp;
 </div>
+
+  ## 🚀 Live Application
+
+  Explore the live version of the application [here](https://www.jerzymarczewski.pl/).
